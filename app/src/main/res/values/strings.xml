@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SpendWise</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="enter_note">Enter note</string>
+    <string name="choose_category">Choose category</string>
+    <string name="hello">Hello,</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="your_top_expenses">Your Top Expenses:</string>
+    <string name="show_all">Show all</string>
+    <string name="_0">₹0</string>
+    <string name="note">Note:</string>
+    <string name="todo">TODO</string>
+    <string name="button">button</string>
+    <string name="tod">TODO</string>
+    <string name="_14_01_2021">14/01/2021</string>
+    <string name="grocery">Grocery</string>
+    <string name="_2000">$2000</string>
+    <string-array name="addFundsItems">
+        <item>Salary</item>
+        <item>Pocket Money</item>
+        <item>Savings</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="subFundsItems">
+        <item>Fruits and Vegetables</item>
+        <item>Shopping</item>
+        <item>Bills</item>
+        <item>Health</item>
+        <item>Entertainment</item>
+        <item>Transport</item>
+        <item>Others</item>
+    </string-array>
+</resources>

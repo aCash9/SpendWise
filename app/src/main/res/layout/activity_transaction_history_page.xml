@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E5EBEE"
+    tools:context=".transactionHistoryPage"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_default"
+        app:menu="@menu/top_app_bar"
+        app:navigationIcon="@drawable/back_button"
+        app:titleMarginTop="15dp"
+        app:title="Transaction History"
+        app:titleTextColor="@color/off_white"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/CustomToolbarStyle"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below = "@id/topAppBar"
+        android:id="@+id/recyclerview"
+        />
+</RelativeLayout>

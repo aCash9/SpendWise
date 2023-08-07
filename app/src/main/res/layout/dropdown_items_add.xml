@@ -1,0 +1,12 @@
+<TextView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="20sp"
+    android:paddingEnd="20dp"
+    android:textAlignment="textEnd"
+    android:textColor="@color/app_default"
+    android:padding="5sp"
+    android:background="@color/green"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="RtlSymmetry" />

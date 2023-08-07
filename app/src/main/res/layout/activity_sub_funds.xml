@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_default"
+        app:menu="@menu/top_app_bar"
+        app:navigationIcon="@drawable/back_button"
+        app:titleMarginTop="15dp"
+        app:title="Removing Funds"
+        app:titleTextColor="@color/off_white"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/CustomToolbarStyle"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topAppBar"
+        android:background="@color/off_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="120dp"
+        tools:context=".SubFunds">
+
+
+        <androidx.cardview.widget.CardView
+            style="@style/CustomCardViewStyle_sub"
+            android:layout_width="350dp"
+            android:layout_height="50sp"
+            android:layout_marginTop="20dp"
+            android:elevation="18sp"
+            android:paddingTop="20dp"
+            app:cardCornerRadius="80sp">
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="61sp"
+                android:background="@drawable/custom_input_sub"
+                android:drawableStart="@drawable/rupee_sub"
+                android:fontFamily="@font/inter_bold"
+                android:hint="@string/enter_amount"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:maxLength="6"
+                android:paddingTop="8dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/off_white"
+                android:textColorHint="@color/off_white"
+                android:textSize="20sp"
+                android:autofillHints="" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/CustomCardViewStyle_sub"
+            android:layout_width="350dp"
+            android:layout_height="50sp"
+            android:layout_marginTop="20dp"
+            android:elevation="18sp"
+            android:paddingTop="20dp"
+            app:cardCornerRadius="80sp">
+
+            <EditText
+                android:id="@+id/note"
+                android:layout_width="match_parent"
+                android:layout_height="61sp"
+                android:background="@drawable/custom_input_sub"
+                android:drawableStart="@drawable/note_sub"
+                android:fontFamily="@font/inter_bold"
+                android:hint="@string/enter_note"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp"
+                android:maxLength="15"
+                android:textAlignment="textEnd"
+                android:textColor="@color/off_white"
+                android:textColorHint="@color/off_white"
+                android:textSize="20sp"
+                android:autofillHints="" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            style="@style/CustomCardViewStyle_sub"
+            android:layout_width="350dp"
+            android:layout_height="50sp"
+            android:layout_marginTop="20dp"
+            android:elevation="18sp"
+            android:paddingTop="20dp"
+            app:cardCornerRadius="80sp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/CustomExposedDropdownMenu_sub"
+                android:layout_width="350dp"
+                android:layout_height="51dp"
+                android:background="#D9EEE1"
+                android:id="@+id/textinputlayout"
+                app:boxCornerRadiusBottomEnd="23sp"
+                app:boxCornerRadiusBottomStart="23sp"
+                app:boxCornerRadiusTopEnd="23sp"
+                app:boxCornerRadiusTopStart="23sp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/inter_bold"
+                    android:inputType="none"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="18sp"
+                    android:paddingBottom="16dp"
+                    android:background="@color/red"
+                    android:scrollbarStyle="insideInset"
+                    android:text="@string/choose_category"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/off_white"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</RelativeLayout>

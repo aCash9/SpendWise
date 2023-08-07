@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomExposedDropdownMenu_add" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/green</item>
+        <item name="boxBackgroundColor">@color/green</item>
+    </style>
+
+    <style name="CustomCardViewStyle_add">
+        <item name="cardBackgroundColor">@color/green</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textColor">@color/app_default</item>
+    </style>
+
+    <style name="CustomExposedDropdownMenu_sub" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/red</item>
+        <item name="boxBackgroundColor">@color/red</item>
+    </style>
+
+    <style name="CustomCardViewStyle_sub">
+        <item name="cardBackgroundColor">@color/red</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textColor">@color/app_default</item>
+    </style>
+
+    <style name="CustomToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="CustomToolbarStyleMain" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+</resources>

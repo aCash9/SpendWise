@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_default"
+        app:menu="@menu/top_app_bar"
+        app:title="SpendWise"
+        app:titleTextColor="@color/off_white"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/CustomToolbarStyleMain"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/creditCard"
+        android:layout_width="477dp"
+        android:layout_height="486dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="150dp"
+        android:paddingStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409"
+        app:srcCompat="@drawable/card2" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monaco"
+        android:text=""
+        android:textColor="#787878"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:layout_constraintVertical_bias="0.605" />
+
+    <Button
+        android:id="@+id/showTransactions"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="140dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:layout_constraintVertical_bias="0.60"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/hello"
+        android:textColor="#787878"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="fill_horizontal"
+        android:text="@string/good_morning"
+        android:textColor="#787878"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:id="@+id/topExpensesRectangle"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="32dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:layout_constraintVertical_bias="1.64">
+
+    <ImageView
+        android:layout_width="362dp"
+        android:layout_height="186dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/expense_background" />
+
+</androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:elevation="8sp"
+        android:text="@string/your_top_expenses"
+        android:textColor="@color/app_default"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/topExpensesRectangle"
+        app:layout_constraintEnd_toEndOf="@id/topExpensesRectangle"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@id/topExpensesRectangle"
+        app:layout_constraintTop_toTopOf="@id/topExpensesRectangle"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="1dp"
+        android:layout_height="307dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:elevation="8sp"
+        android:background="@drawable/divider_line"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@id/topExpensesRectangle"
+        app:layout_constraintEnd_toEndOf="@id/topExpensesRectangle"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@id/topExpensesRectangle"
+        app:layout_constraintTop_toTopOf="@id/topExpensesRectangle"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="1dp"
+        android:layout_height="307dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:elevation="8sp"
+        android:background="@drawable/divider_line"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@id/topExpensesRectangle"
+        app:layout_constraintEnd_toEndOf="@id/topExpensesRectangle"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@id/topExpensesRectangle"
+        app:layout_constraintTop_toTopOf="@id/topExpensesRectangle"
+        app:layout_constraintVertical_bias="0.01" />
+
+
+    <ImageButton
+        android:id="@+id/subtractFunds_button"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:background="@color/off_white"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintVertical_bias="0.917"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:srcCompat="@drawable/subtract_button" />
+
+    <ImageButton
+        android:id="@+id/addFunds_button"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:background="@color/off_white"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintVertical_bias="0.917"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:srcCompat="@drawable/add_button" />
+
+    <TextView
+        android:id="@+id/show_all_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15sp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/show_all"
+        android:textColor="@color/app_default"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/topExpensesRectangle"
+        app:layout_constraintEnd_toEndOf="@id/topExpensesRectangle"
+        app:layout_constraintHorizontal_bias="0.9"
+        android:elevation="8sp"
+        app:layout_constraintStart_toStartOf="@id/topExpensesRectangle"
+        app:layout_constraintTop_toTopOf="@id/topExpensesRectangle"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <Button
+        android:id="@+id/showAll_button"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/topExpensesRectangle"
+        app:layout_constraintEnd_toEndOf="@id/topExpensesRectangle"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="@id/topExpensesRectangle"
+        app:layout_constraintTop_toTopOf="@id/topExpensesRectangle"
+        app:layout_constraintVertical_bias="0.14" />
+
+
+
+    <TextView
+        android:id="@+id/firstExpense"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:elevation="8sp"
+        android:text=""
+        android:textColor="#787878"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/topExpensesRectangle"
+        app:layout_constraintEnd_toEndOf="@id/topExpensesRectangle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/topExpensesRectangle"
+        app:layout_constraintTop_toTopOf="@id/topExpensesRectangle"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <TextView
+        android:id="@+id/secondExpense"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:elevation="8sp"
+        android:fontFamily="@font/inter_medium"
+        android:text=""
+        android:textColor="#787878"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/topExpensesRectangle"
+        app:layout_constraintEnd_toEndOf="@id/topExpensesRectangle"
+        app:layout_constraintStart_toStartOf="@id/topExpensesRectangle"
+        app:layout_constraintTop_toTopOf="@id/topExpensesRectangle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <TextView
+        android:id="@+id/availableBalance"
+        android:layout_width="236dp"
+        android:layout_height="39dp"
+        android:text="@string/_0"
+        android:fontFamily="@font/credit_font"
+        android:textAlignment="textEnd"
+        android:textColor="@color/app_default"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/creditCard"
+        app:layout_constraintEnd_toEndOf="@id/creditCard"
+        app:layout_constraintStart_toStartOf="@id/creditCard"
+        app:layout_constraintTop_toTopOf="@id/creditCard"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintVertical_bias="0.384"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

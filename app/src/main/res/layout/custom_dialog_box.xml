@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFD9D9D9"
+    android:paddingBottom="20dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/amount"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="30dp"
+        android:textSize="30sp"
+        android:fontFamily="@font/inter_bold"/>
+
+    <TextView
+        android:layout_width="130dp"
+        android:id="@+id/category"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amount"
+        android:text=""
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:textSize="15sp"
+        android:fontFamily="@font/inter_medium"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:id="@+id/date"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/amount"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/category"
+        android:textSize="15sp"
+        android:fontFamily="@font/inter_medium"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:id="@+id/type"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/note"
+        android:background="@drawable/transaction_plus_button"
+        android:layout_marginTop="19dp"
+        android:layout_marginStart="90dp"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/note"
+        android:layout_marginTop="10dp"
+        android:text="@string/note"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="30sp"
+        android:layout_below="@id/category"/>
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/content"
+        android:text=""
+        android:textSize="18sp"
+        android:fontFamily="@font/inter"
+        android:layout_below="@id/note"
+        android:layout_marginStart="30sp"
+        />
+
+
+    <ImageButton
+        android:layout_width="20dp"
+        android:id="@+id/bin"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/note"
+        android:layout_below="@id/note"
+        android:layout_marginStart="99dp"
+        android:background="@drawable/custom_bin_logo"
+        android:contentDescription="@string/button" />
+</RelativeLayout>
