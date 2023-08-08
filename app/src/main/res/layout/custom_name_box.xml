@@ -13,6 +13,7 @@
         android:text="Welcome to SpendWise"
         android:id="@+id/wel"
         android:textSize="25sp"
+        android:textColor="@color/app_default"
         android:textAlignment="center"
         android:fontFamily="@font/inter_medium"
         />
@@ -27,6 +28,8 @@
         android:hint="Enter you Name"
         android:maxLength="20"
         android:textSize="20sp"
+        android:textColorHint="@color/app_default"
+        android:textColor="@color/app_default"
         android:inputType="text"
         android:layout_margin="5sp"
         android:paddingEnd="20dp"
@@ -38,6 +41,7 @@
         android:layout_below="@id/name"
         android:id="@+id/submitButton"
         android:text="Submit"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="@font/inter_bold"
         android:layout_height="wrap_content"/>
