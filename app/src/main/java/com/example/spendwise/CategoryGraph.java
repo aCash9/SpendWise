@@ -48,6 +48,7 @@ public class CategoryGraph extends AppCompatActivity {
         Description description = pieChart.getDescription();
         description.setEnabled(false);
         pieChart.setDrawEntryLabels(false);
+        pieChart.setUsePercentValues(true);
         pieChart.setCenterText("Expense Chart");
     }
 

@@ -52,17 +52,17 @@
     <Button
         android:id="@+id/showTransactions"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="140dp"
-        android:layout_height="25dp"
+        android:layout_width="145dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="16dp"
         android:background="#FFFFFF"
         android:hapticFeedbackEnabled="true"
         app:layout_constraintBottom_toBottomOf="@id/creditCard"
         app:layout_constraintEnd_toEndOf="@id/creditCard"
-        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="@id/creditCard"
         app:layout_constraintTop_toTopOf="@id/creditCard"
-        app:layout_constraintVertical_bias="0.60"
+        app:layout_constraintVertical_bias="0.605"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView

@@ -16,7 +16,7 @@ import java.util.PriorityQueue;
 
 public class dataBaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "HistoryDatabase1.0";
+    public static final String DATABASE_NAME = "HistoryDatabase1.2";
     public static final String TRANSACTION_LIST = "TransactionList";
     public static final String KEY_AMOUNT = "Amount";
     public static final String KEY_NOTE = "Note";
@@ -55,8 +55,8 @@ public class dataBaseHelper extends SQLiteOpenHelper {
 
         //updating the balance after every transaction
         int newBalance;
-        if(tempBalance == null) {
-            if(item.getType().equals("add"))
+        if (tempBalance == null) {
+            if (item.getType().equals("add"))
                 newBalance = item.getAmount();
             else {
                 newBalance = -item.getAmount();
@@ -74,13 +74,13 @@ public class dataBaseHelper extends SQLiteOpenHelper {
         return insert != -1;
     }
 
-    public List<TransactionDetails> getData(){
+    public List<TransactionDetails> getData() {
         Log.d("mytag", "getData: IN");
         List<TransactionDetails> list = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String queryString = "SELECT * FROM " + TRANSACTION_LIST;
         Cursor cursor = db.rawQuery(queryString, null);
-        if(cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             do {
                 TransactionDetails item = new TransactionDetails();
                 item.setAmount(cursor.getInt(0));
@@ -89,34 +89,38 @@ public class dataBaseHelper extends SQLiteOpenHelper {
                 item.setType(cursor.getString(3));
                 item.setCategory(cursor.getString(4));
                 list.add(item);
-            } while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
         Log.d("mytag", "getData: list generated");
         return list;
     }
-    public PriorityQueue<categoryDetails> getCategoryData(){
+
+    public PriorityQueue<categoryDetails> getCategoryData() {
         List<TransactionDetails> list = getData();
-        int fAv = 0, shopping = 0, bills = 0, health = 0, entertainment = 0, transport = 0, others = 0;
-        for(TransactionDetails item : list) {
+        int fAv = 0, shopping = 0, bills = 0, health = 0, entertainment = 0, transport = 0, others = 0, food = 0;
+        for (TransactionDetails item : list) {
             int amt = item.getAmount();
             String cat = item.getCategory();
-            if(cat.equals("Fruits and Vegetables")) {
+            if (cat.equals("Fruits and Vegetables")) {
                 fAv += item.getAmount();
-            } else if(cat.equals("Shopping")) {
+            } else if (cat.equals("Shopping")) {
                 shopping += item.getAmount();
-            } else if(cat.equals("Bills")) {
+            } else if (cat.equals("Bills")) {
                 bills += item.getAmount();
-            } else if(cat.equals("Health")) {
+            } else if (cat.equals("Health")) {
                 health += item.getAmount();
-            } else if(cat.equals("Entertainment")) {
+            } else if (cat.equals("Entertainment")) {
                 entertainment += item.getAmount();
-            } else if(cat.equals("Transport")) {
+            } else if (cat.equals("Transport")) {
                 transport += item.getAmount();
-            } else if(cat.equals("Others")) {
+            } else if (cat.equals("Others")) {
                 others += item.getAmount();
+            } else if (cat.equals("Food")) {
+                food += item.getAmount();
             }
+
         }
         PriorityQueue<categoryDetails> pq = new PriorityQueue<>(new categoryComparator());
         categoryDetails FAV = new categoryDetails("Fruits and Vegetables", fAv);
@@ -125,6 +129,7 @@ public class dataBaseHelper extends SQLiteOpenHelper {
         categoryDetails HEALTH = new categoryDetails("Health", health);
         categoryDetails ENTERTAINMENT = new categoryDetails("Entertainment", entertainment);
         categoryDetails TRANSPORT = new categoryDetails("Transport", transport);
+        categoryDetails FOOD = new categoryDetails("Food", food);
         categoryDetails OTHERS = new categoryDetails("Others", others);
         pq.add(FAV);
         pq.add(SHOPPPING);
@@ -132,15 +137,17 @@ public class dataBaseHelper extends SQLiteOpenHelper {
         pq.add(HEALTH);
         pq.add(ENTERTAINMENT);
         pq.add(TRANSPORT);
+        pq.add(FOOD);
         pq.add(OTHERS);
 
         return pq;
     }
+
     static class categoryComparator implements Comparator<categoryDetails> {
 
         @Override
         public int compare(categoryDetails o1, categoryDetails o2) {
-            if(o1.getCategoryAmount() < o2.getCategoryAmount())
+            if (o1.getCategoryAmount() < o2.getCategoryAmount())
                 return 1;
             else if (o1.getCategoryAmount() > o2.getCategoryAmount())
                 return -1;
@@ -160,13 +167,14 @@ public class dataBaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return data;
     }
+
     public boolean deleteEntry(TransactionDetails item) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         int updatedValue = Integer.parseInt(getLastRowData(KEY_BALANCE));
         // Delete the item
         String whereClause = KEY_AMOUNT + " = ? AND " + KEY_DATE + " = ?";
-        String[] whereArgs = { String.valueOf(item.getAmount()), item.getDate() };
+        String[] whereArgs = {String.valueOf(item.getAmount()), item.getDate()};
         int rowsDeleted = db.delete(TRANSACTION_LIST, whereClause, whereArgs);
         Log.d("mytag", "deleteEntry: deleted " + rowsDeleted + " rows");
 
@@ -176,9 +184,10 @@ public class dataBaseHelper extends SQLiteOpenHelper {
         } else {
             updatedValue += item.getAmount();
         }
-        updateLastEntryOfColumn(KEY_BALANCE,String.valueOf(updatedValue));
+        updateLastEntryOfColumn(KEY_BALANCE, String.valueOf(updatedValue));
         return rowsDeleted > 0;
     }
+
     public boolean updateLastEntryOfColumn(String columnName, String newValue) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -194,7 +203,7 @@ public class dataBaseHelper extends SQLiteOpenHelper {
             values.put(columnName, newValue);
 
             String whereClause = KEY_BALANCE + " = ?";
-            String[] whereArgs = { String.valueOf(lastRowId) };
+            String[] whereArgs = {String.valueOf(lastRowId)};
 
             int rowsAffected = db.update(TRANSACTION_LIST, values, whereClause, whereArgs);
             Log.d("mytag", "updateLastEntryOfColumn: updated " + rowsAffected + " rows");
