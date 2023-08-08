@@ -30,7 +30,9 @@
 ## About The Project
 
 <a href="https://github.com/aCash9/SpendWise">
-    <img src="app/src/main/res/drawable/logo.png" alt="Logo" width="80" height="80">
+    <img src="app/src/main/res/drawable/ss2.png" alt="Logo">
+    <img src="app/src/main/res/drawable/sssss.png" alt="Logo">
+    <img src="app/src/main/res/drawable/Screenshot_20230808_205505.png" >
   </a>
 
 SpendWise is an innovative Java Android application designed to empower users in managing their finances effectively. With its intuitive interface, users can effortlessly track their expenses by inputting transactions, starting with their initial budget. By offering a seamless experience to store and categorize expenditures, SpendWise enables users to gain a clear understanding of their spending patterns, make informed financial decisions, and ultimately achieve better control over their finances.
