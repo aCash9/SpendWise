@@ -22,7 +22,6 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Contributing](#contributing)
 * [Authors](#authors)
 
 ## About The Project
