@@ -52,7 +52,7 @@ Go to this link download the APK and install and use
  
 You may have to accept certain security warnings before installing the application.
 
-https://www.upload-apk.com/en/MbgnVoxdmJ5VJeg
+https://www.upload-apk.com/sr12lbPzLFfAdgG
 
 ### Creating A Pull Request
 
